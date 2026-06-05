@@ -30,7 +30,7 @@ export default function Home() {
   const [domain, setDomain] = useState('all');
   const [model, setModel] = useState('gpt-4o-mini');
   const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState<{answer:string;sources:{title:string;section:string;excerpt:string;relevance:number}[];model_used:string;grounded:boolean;confidence:number}|null>(null);
   const [error, setError] = useState('');
 
   const handleQuery = async (q = question) => {
@@ -233,3 +233,4 @@ export default function Home() {
     </div>
   );
 }
+
